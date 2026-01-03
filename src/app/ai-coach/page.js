@@ -38,52 +38,74 @@ Keep rest short and intensity high.
   };
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-10 max-w-3xl mx-auto">
+  <main className="min-h-screen bg-black text-white px-6 py-20">
+    
+    <div className="max-w-2xl mx-auto">
       
-      <h1 className="text-4xl font-bold mb-6 text-center">
+      <h1 className="text-4xl font-bold mb-4 text-center">
         AmanBlifts AI Coach
       </h1>
 
-      <p className="text-gray-400 text-center mb-8">
-        Get free workout guidance based on your goal.
+      <p className="text-gray-400 text-center mb-12">
+        Get a simple workout plan based on your goal and weekly availability.
       </p>
 
-      <div className="space-y-4">
-        <select
-          className="w-full p-3 rounded bg-gray-900 border border-gray-700"
-          value={goal}
-          onChange={(e) => setGoal(e.target.value)}
-        >
-          <option value="">Select Goal</option>
-          <option value="muscle">Muscle Gain</option>
-          <option value="fatloss">Fat Loss</option>
-        </select>
+      <div className="border border-gray-800 rounded-2xl p-8 space-y-6">
+        
+        <div>
+          <label className="block text-sm mb-2 text-gray-400">
+            Training Goal
+          </label>
+          <select
+            className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gray-500"
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+          >
+            <option value="">Select goal</option>
+            <option value="muscle">Muscle Gain</option>
+            <option value="fatloss">Fat Loss</option>
+          </select>
+        </div>
 
-        <select
-          className="w-full p-3 rounded bg-gray-900 border border-gray-700"
-          value={days}
-          onChange={(e) => setDays(e.target.value)}
-        >
-          <option value="">Workout Days / Week</option>
-          <option value="3">3 Days</option>
-          <option value="4">4 Days</option>
-          <option value="5">5 Days</option>
-        </select>
+        <div>
+          <label className="block text-sm mb-2 text-gray-400">
+            Workout Days per Week
+          </label>
+          <select
+            className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gray-500"
+            value={days}
+            onChange={(e) => setDays(e.target.value)}
+          >
+            <option value="">Select days</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+          </select>
+        </div>
 
         <button
           onClick={getPlan}
-          className="w-full bg-white text-black py-3 rounded font-semibold hover:bg-gray-200 transition"
+          className="w-full bg-white text-black py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
         >
-          Get My Plan
+          Generate My Plan
         </button>
+
       </div>
 
       {response && (
-        <pre className="whitespace-pre-wrap bg-gray-900 border border-gray-700 rounded-lg p-6 mt-6 text-gray-200">
-          {response}
-        </pre>
+        <div className="mt-10 border border-gray-800 rounded-2xl p-8 bg-gray-950">
+          <h2 className="text-xl font-semibold mb-4">
+            Your Workout Plan
+          </h2>
+          <pre className="whitespace-pre-wrap text-gray-300 text-sm leading-relaxed">
+            {response}
+          </pre>
+        </div>
       )}
 
-    </main>
-  );
+    </div>
+
+  </main>
+);
+
 }
