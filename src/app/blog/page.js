@@ -6,7 +6,7 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col items-center text-center">
         
         <span className="text-sm uppercase tracking-widest text-gray-400 mb-4">
-          amanblifts
+          Amanblifts
         </span>
 
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
