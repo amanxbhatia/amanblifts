@@ -10,41 +10,45 @@ const exercises = [
 
 export default function ExercisesPage() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-10">
-      
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        amanblifts Exercises
-      </h1>
+  <main className="min-h-screen bg-black text-white px-6 py-16">
+    
+    <h1 className="text-4xl font-bold mb-12 text-center">
+      amanblifts Exercises
+    </h1>
 
-      <div className="grid gap-6 max-w-4xl mx-auto">
-        {exercises.map((ex, index) => (
-          <div
-            key={index}
-            className="border border-gray-700 rounded-xl p-6"
-          >
+    <div className="max-w-5xl mx-auto grid gap-10">
+      {exercises.map((ex, index) => (
+        <div
+          key={index}
+          className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition"
+        >
+          <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">
               {ex.name}
             </h2>
 
-            <p className="text-gray-400 mb-1">
-              Muscle: {ex.muscle}
+            <p className="text-gray-400 text-sm">
+              Muscle: <span className="text-white">{ex.muscle}</span>
             </p>
 
-            <p className="text-gray-400 mb-4">
-              Sets: {ex.sets} | Reps: {ex.reps}
+            <p className="text-gray-400 text-sm">
+              Sets: {ex.sets} • Reps: {ex.reps}
             </p>
-
-           <iframe
-  src={ex.video}
-  className="w-full aspect-video rounded-lg"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
-
           </div>
-        ))}
-      </div>
 
-    </main>
-  );
+          <div className="rounded-xl overflow-hidden border border-gray-800">
+            <iframe
+              src={ex.video}
+              className="w-full aspect-video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </main>
+);
+
 }
