@@ -17,9 +17,7 @@ export default function Home() {
   {/* Hero Content */}
   <div className="relative z-10 max-w-4xl px-6">
     
-    <span className="text-sm uppercase tracking-widest text-gray-400 mb-4 block">
-      amanblifts
-    </span>
+   
 
     <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
       Train Smart. <br className="hidden md:block" />
