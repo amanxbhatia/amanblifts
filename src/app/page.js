@@ -2,9 +2,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       
-      {/* HERO SECTION */}
-   
-      <section className="relative min-h-[85vh] flex items-center justify-center text-center">
+{/* HERO SECTION */}
+<section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
 
   {/* Background Image */}
   <div
@@ -15,34 +14,35 @@ export default function Home() {
   {/* Dark Overlay */}
   <div className="absolute inset-0 bg-black/70"></div>
 
-  {/* Content */}
+  {/* Hero Content */}
   <div className="relative z-10 max-w-4xl px-6">
+    
+    <span className="text-sm uppercase tracking-widest text-gray-400 mb-4 block">
+      amanblifts
+    </span>
+
+    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+      Train Smart. <br className="hidden md:block" />
+      Lift Real.
+    </h1>
+
+    <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-10">
+      Daily gym edits, exercise breakdowns, workout plans, and a free AI gym coach —
+      built from real gym experience.
+    </p>
+
+    <div className="flex justify-center">
+      <a
+        href="/exercises"
+        className="bg-white text-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+      >
+        Explore Exercises
+      </a>
     </div>
-   
 
-       
+  </div>
+</section>
 
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-          Train Smart. <br className="hidden md:block" />
-          Lift Real.
-        </h1>
-
-        <p className="text-gray-400 max-w-2xl text-lg mb-10">
-          Daily gym edits, exercise breakdowns, workout plans, and a free AI gym coach —
-          built from real gym experience.
-        </p>
-
-      <div className="flex justify-center">
-  <a
-    href="/exercises"
-    className="bg-white text-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
-  >
-    Explore Exercises
-  </a>
-</div>
-
-
-      </section>
       {/* FEATURES SECTION */}
 <section className="py-20">
   <div className="max-w-6xl mx-auto px-6">
