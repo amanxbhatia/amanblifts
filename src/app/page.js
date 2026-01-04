@@ -19,21 +19,15 @@ export default function Home() {
           built from real gym experience.
         </p>
 
-        <div className="flex gap-4 flex-wrap justify-center">
-          <a
-            href="/exercises"
-            className="bg-white text-black px-8 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
-          >
-            Explore Exercises
-          </a>
+      <div className="flex justify-center">
+  <a
+    href="/exercises"
+    className="bg-white text-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+  >
+    Explore Exercises
+  </a>
+</div>
 
-          <a
-            href="/ai-coach"
-            className="border border-gray-700 px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
-          >
-            Ask AI Coach
-          </a>
-        </div>
 
       </section>
       {/* FEATURES SECTION */}
