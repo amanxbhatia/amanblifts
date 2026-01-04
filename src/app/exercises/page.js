@@ -10,7 +10,8 @@ const exercises = [
 
 export default function ExercisesPage() {
   return (
-  <main className="min-h-screen bg-black text-white px-6 py-16">
+ <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-14 sm:py-16">
+
     
     <h1 className="text-4xl font-bold mb-12 text-center">
       amanblifts Exercises
@@ -27,11 +28,13 @@ export default function ExercisesPage() {
               {ex.name}
             </h2>
 
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
+
               Muscle: <span className="text-white">{ex.muscle}</span>
             </p>
 
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
+
               Sets: {ex.sets} • Reps: {ex.reps}
             </p>
           </div>

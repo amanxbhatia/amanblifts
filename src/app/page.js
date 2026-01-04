@@ -19,21 +19,23 @@ export default function Home() {
     
    
 
-    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
       Train Smart. <br className="hidden md:block" />
       Lift Real.
     </h1>
 
-    <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-10">
+   <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg mb-10 px-2">
+
       Daily gym edits, exercise breakdowns, workout plans, and a free AI gym coach —
       built from real gym experience.
     </p>
 
     <div className="flex justify-center">
       <a
-        href="/exercises"
-        className="bg-white text-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
-      >
+  href="/exercises"
+  className="bg-white text-black px-8 sm:px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+>
+
         Explore Exercises
       </a>
     </div>
@@ -54,10 +56,12 @@ export default function Home() {
       {/* Card 1 */}
       <a
         href="/exercises"
-        className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition"
+       className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition"
+
       >
         <h3 className="text-xl font-semibold mb-3">Exercises</h3>
-        <p className="text-gray-400 text-sm">
+       <p className="text-gray-400 text-sm leading-relaxed">
+
           Proper form, muscle focus, and real gym videos for each exercise.
         </p>
       </a>

@@ -72,7 +72,8 @@ Keep rest short and intensity high.
             Workout Days per Week
           </label>
           <select
-            className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gray-500"
+            className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gray-500"
+
             value={days}
             onChange={(e) => setDays(e.target.value)}
           >
@@ -85,7 +86,8 @@ Keep rest short and intensity high.
 
         <button
           onClick={getPlan}
-          className="w-full bg-white text-black py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+         className="w-full bg-white text-black py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+
         >
           Generate My Plan
         </button>
