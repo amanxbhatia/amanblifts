@@ -30,7 +30,7 @@ export default function Home() {
   <div className="max-w-6xl mx-auto px-6">
     
     <h2 className="text-3xl font-bold text-center mb-12">
-      What you’ll find on amanblifts
+      What you’ll find here
     </h2>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
