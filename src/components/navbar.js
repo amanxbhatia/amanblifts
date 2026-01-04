@@ -10,7 +10,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-bold tracking-wide hover:text-gray-300 transition"
         >
-          amanblifts
+          Home
         </Link>
 
         {/* Navigation Links */}
