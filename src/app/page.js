@@ -5,9 +5,22 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col items-center text-center">
         
-        <span className="text-sm uppercase tracking-widest text-gray-400 mb-4">
-          amanblifts
-        </span>
+       <section className="relative min-h-[85vh] flex items-center justify-center text-center">
+
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/hero-gym.jpg')" }}
+  ></div>
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/70"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl px-6">
+  </div>
+</section>
+
 
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
           Train Smart. <br className="hidden md:block" />
