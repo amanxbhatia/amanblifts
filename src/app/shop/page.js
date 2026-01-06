@@ -10,14 +10,14 @@ export default function ShopPage() {
       <div className="max-w-3xl mx-auto text-center">
         
         <h1 className="text-4xl font-bold mb-6">
-          amanblifts Shop
+          Amanblifts Shop
         </h1>
 
         <p className="text-gray-400 text-lg mb-10">
-          Gym essentials and amanblifts merchandise are coming soon.
+          Coming soon.
         </p>
 
-        <div className="border border-gray-800 rounded-2xl p-10">
+        {/* <div className="border border-gray-800 rounded-2xl p-10">
           <p className="text-gray-300 mb-4">
             What you can expect:
           </p>
@@ -32,7 +32,7 @@ export default function ShopPage() {
           <p className="text-sm text-gray-500 mt-8">
             Stay tuned — this section will unlock in Phase 2.
           </p>
-        </div>
+        </div> */}
 
       </div>
     </main>
