@@ -1,10 +1,12 @@
-export const dynamicParams = false;
+"use client";
+
+import { usePathname } from "next/navigation";
 
 const exerciseData = {
   "incline-dumbbell-press": {
     title: "Incline Dumbbell Press",
     description:
-      "Incline dumbbell press exercise guide with proper form, muscles worked, common mistakes, and training tips.",
+      "Incline dumbbell press exercise guide with proper form, muscles worked, and training tips.",
     video: "https://www.youtube.com/embed/ThJGIFDqiiA",
     muscles: ["Upper Chest", "Front Deltoids", "Triceps"],
     steps: [
@@ -16,15 +18,10 @@ const exerciseData = {
   },
 };
 
-// ✅ TELL NEXT.JS WHICH SLUGS EXIST
-export async function generateStaticParams() {
-  return Object.keys(exerciseData).map((slug) => ({
-    slug,
-  }));
-}
-
-export default function ExerciseDetailPage({ params }) {
-  const exercise = exerciseData[params.slug];
+export default function ExerciseDetailPage() {
+  const pathname = usePathname();
+  const slug = pathname.split("/").pop();
+  const exercise = exerciseData[slug];
 
   if (!exercise) {
     return (
