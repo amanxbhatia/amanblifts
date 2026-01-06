@@ -2,17 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { exercises } from "../../data/exercises";
 
-const exercises = [
-  {
-    name: "Incline Dumbbell Press",
-    slug: "incline-dumbbell-press",
-    muscle: "Chest",
-    sets: "4",
-    reps: "8–12",
-    video: "https://www.youtube.com/embed/ThJGIFDqiiA",
-  },
-];
 
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("All");
