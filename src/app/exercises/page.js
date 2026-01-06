@@ -1,197 +1,101 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-
-const exercises = [
-  // CHEST
-  {
-    name: "Incline Dumbbell Press",
-    slug: "incline-dumbbell-press",
-    muscle: "Chest",
-    sets: "4",
-    reps: "8–12",
+const exerciseData = {
+  "incline-dumbbell-press": {
+    title: "Incline Dumbbell Press",
+    description:
+      "Incline dumbbell press exercise guide with proper form, muscles worked, common mistakes, and training tips.",
     video: "https://www.youtube.com/embed/ThJGIFDqiiA",
+    muscles: [
+      "Upper Chest (primary)",
+      "Front Deltoids",
+      "Triceps",
+    ],
+    steps: [
+      "Set an incline bench at about 30–45 degrees.",
+      "Hold dumbbells at shoulder level with palms facing forward.",
+      "Press the dumbbells upward until your arms are extended.",
+      "Lower them slowly back to the starting position.",
+    ],
+    mistakes: [
+      "Using too much weight",
+      "Flaring elbows too wide",
+      "Bouncing dumbbells at the bottom",
+    ],
+    tips: [
+      "Use controlled reps",
+      "Maintain full range of motion",
+      "Perform early in chest workouts",
+    ],
   },
-  {
-    name: "Flat Barbell Bench Press",
-    slug: "flat-barbell-bench-press",
-    muscle: "Chest",
-    sets: "4",
-    reps: "6–10",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
+};
 
-  // BACK
-  {
-    name: "Lat Pulldown",
-    slug: "lat-pulldown",
-    muscle: "Back",
-    sets: "4",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-  {
-    name: "Seated Cable Row",
-    slug: "seated-cable-row",
-    muscle: "Back",
-    sets: "3",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
+export default function ExerciseDetailPage({ params }) {
+  const exercise = exerciseData[params.slug];
 
-  // LEGS
-  {
-    name: "Barbell Squat",
-    slug: "barbell-squat",
-    muscle: "Legs",
-    sets: "4",
-    reps: "6–10",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-  {
-    name: "Leg Press",
-    slug: "leg-press",
-    muscle: "Legs",
-    sets: "4",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-
-  // SHOULDERS
-  {
-    name: "Barbell Shoulder Press",
-    slug: "barbell-shoulder-press",
-    muscle: "Shoulders",
-    sets: "4",
-    reps: "8–10",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-  {
-    name: "Lateral Raises",
-    slug: "lateral-raises",
-    muscle: "Shoulders",
-    sets: "4",
-    reps: "12–15",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-
-  // BICEPS
-  {
-    name: "Barbell Curl",
-    slug: "barbell-curl",
-    muscle: "Biceps",
-    sets: "3",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-  {
-    name: "Hammer Curl",
-    slug: "hammer-curl",
-    muscle: "Biceps",
-    sets: "3",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-
-  // TRICEPS
-  {
-    name: "Tricep Rope Pushdown",
-    slug: "tricep-rope-pushdown",
-    muscle: "Triceps",
-    sets: "3",
-    reps: "12–15",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-  {
-    name: "Overhead Tricep Extension",
-    slug: "overhead-tricep-extension",
-    muscle: "Triceps",
-    sets: "3",
-    reps: "10–12",
-    video: "https://www.youtube.com/embed/VIDEO_ID",
-  },
-];
-
-
-export default function ExercisesPage() {
-  const [selectedMuscle, setSelectedMuscle] = useState("All");
-
-  const muscles = [
-    "All",
-    "Chest",
-    "Back",
-    "Legs",
-    "Shoulders",
-    "Biceps",
-    "Triceps",
-  ];
+  if (!exercise) {
+    return (
+      <main className="min-h-screen bg-black text-white px-6 py-20 text-center">
+        <h1 className="text-2xl font-bold">Exercise coming soon</h1>
+      </main>
+    );
+  }
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-14 sm:py-16">
-      
-      <h1 className="text-4xl font-bold mb-10 text-center">
-        amanblifts Exercises
-      </h1>
+    <main className="min-h-screen bg-black text-white px-6 py-20">
+      <div className="max-w-3xl mx-auto">
 
-      {/* MUSCLE FILTER */}
-      <div className="flex flex-wrap gap-3 justify-center mb-14">
-        {muscles.map((muscle) => (
-          <button
-            key={muscle}
-            onClick={() => setSelectedMuscle(muscle)}
-            className={`px-5 py-2 rounded-full border text-sm transition
-              ${
-                selectedMuscle === muscle
-                  ? "bg-white text-black border-white"
-                  : "border-gray-700 text-gray-300 hover:border-gray-500"
-              }`}
-          >
-            {muscle}
-          </button>
-        ))}
+        <h1 className="text-4xl font-bold mb-6">
+          {exercise.title}
+        </h1>
+
+        <p className="text-gray-400 mb-10">
+          {exercise.description}
+        </p>
+
+        <div className="rounded-2xl overflow-hidden border border-gray-800 mb-12">
+          <iframe
+            src={exercise.video}
+            className="w-full aspect-video"
+            allowFullScreen
+          />
+        </div>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Muscles Worked</h2>
+          <ul className="text-gray-400 space-y-2">
+            {exercise.muscles.map((m, i) => (
+              <li key={i}>• {m}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">How to Perform</h2>
+          <ol className="list-decimal list-inside text-gray-400 space-y-2">
+            {exercise.steps.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Common Mistakes</h2>
+          <ul className="text-gray-400 space-y-2">
+            {exercise.mistakes.map((m, i) => (
+              <li key={i}>• {m}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Training Tips</h2>
+          <ul className="text-gray-400 space-y-2">
+            {exercise.tips.map((t, i) => (
+              <li key={i}>• {t}</li>
+            ))}
+          </ul>
+        </section>
+
       </div>
-
-      {/* EXERCISE LIST */}
-      <div className="max-w-5xl mx-auto grid gap-10">
-        {exercises
-          .filter(
-            (ex) =>
-              selectedMuscle === "All" || ex.muscle === selectedMuscle
-          )
-         .map((ex, index) => (
-  <Link href={`/exercises/${ex.slug}`} key={index}>
-    <div className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition cursor-pointer">
-
-              <div className="mb-6">
-                <h2 className="text-2xl font-semibold mb-2">
-                  {ex.name}
-                </h2>
-
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Muscle: <span className="text-white">{ex.muscle}</span>
-                </p>
-
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Sets: {ex.sets} • Reps: {ex.reps}
-                </p>
-              </div>
-
-              <div className="rounded-xl overflow-hidden border border-gray-800">
-                <iframe
-                  src={ex.video}
-                  className="w-full aspect-video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-    
-  </Link>
-))
-}
-      </div>
-      
-
     </main>
   );
 }
