@@ -1,80 +1,72 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { exercises } from "../../data/exercises";
+import { usePathname } from "next/navigation";
+import { exercises } from "../../../data/exercises";
 
+export default function ExerciseDetailPage() {
+  const slug = usePathname().split("/").pop();
+  const exercise = exercises.find((ex) => ex.slug === slug);
 
-export default function ExercisesPage() {
-  const [selectedMuscle, setSelectedMuscle] = useState("All");
-
-  const muscles = [
-    "All",
-    "Chest",
-    "Back",
-    "Legs",
-    "Shoulders",
-    "Biceps",
-    "Triceps",
-  ];
-
-  const filteredExercises =
-    selectedMuscle === "All"
-      ? exercises
-      : exercises.filter((ex) => ex.muscle === selectedMuscle);
+  if (!exercise || !exercise.description) {
+    return (
+      <main className="min-h-screen bg-black text-white px-6 py-20 text-center">
+        <h1 className="text-2xl font-bold">Exercise coming soon</h1>
+        <p className="text-gray-400 mt-4">
+          Detailed guide for this exercise will be added shortly.
+        </p>
+      </main>
+    );
+  }
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-14 sm:py-16">
-      <h1 className="text-4xl font-bold mb-10 text-center">
-        AmanBlifts Exercises
-      </h1>
+    <main className="min-h-screen bg-black text-white px-6 py-20">
+      <div className="max-w-3xl mx-auto">
 
-      {/* MUSCLE FILTER */}
-      <div className="flex flex-wrap gap-3 justify-center mb-14">
-        {muscles.map((muscle) => (
-          <button
-            key={muscle}
-            onClick={() => setSelectedMuscle(muscle)}
-            className={`px-5 py-2 rounded-full border text-sm transition ${
-              selectedMuscle === muscle
-                ? "bg-white text-black border-white"
-                : "border-gray-700 text-gray-300 hover:border-gray-500"
-            }`}
-          >
-            {muscle}
-          </button>
-        ))}
-      </div>
+        <h1 className="text-4xl font-bold mb-6">
+          {exercise.name}
+        </h1>
 
-      {/* EXERCISE LIST */}
-      <div className="max-w-5xl mx-auto grid gap-10">
-        {filteredExercises.map((ex) => (
-          <Link key={ex.slug} href={`/exercises/${ex.slug}`}>
-            <div className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition cursor-pointer">
-              <div className="mb-6">
-                <h2 className="text-2xl font-semibold mb-2">
-                  {ex.name}
-                </h2>
+        <p className="text-gray-400 mb-10">
+          {exercise.description}
+        </p>
 
-                <p className="text-gray-400 text-sm">
-                  Muscle: <span className="text-white">{ex.muscle}</span>
-                </p>
+        {exercise.video && (
+          <div className="rounded-2xl overflow-hidden border border-gray-800 mb-12">
+            <iframe
+              src={exercise.video}
+              className="w-full aspect-video"
+              allowFullScreen
+            />
+          </div>
+        )}
 
-                <p className="text-gray-400 text-sm">
-                  Sets: {ex.sets} • Reps: {ex.reps}
-                </p>
-              </div>
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Muscles Worked</h2>
+          <ul className="text-gray-400 space-y-2">
+            {exercise.musclesWorked.map((m, i) => (
+              <li key={i}>• {m}</li>
+            ))}
+          </ul>
+        </section>
 
-              <div className="rounded-xl overflow-hidden border border-gray-800">
-                <iframe
-                  src={ex.video}
-                  className="w-full aspect-video"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </Link>
-        ))}
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">How to Perform</h2>
+          <ol className="list-decimal list-inside text-gray-400 space-y-2">
+            {exercise.steps.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Training Tips</h2>
+          <ul className="text-gray-400 space-y-2">
+            {exercise.tips.map((t, i) => (
+              <li key={i}>• {t}</li>
+            ))}
+          </ul>
+        </section>
+
       </div>
     </main>
   );

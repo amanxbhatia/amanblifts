@@ -6,15 +6,22 @@ export const exercises = [
     sets: "4",
     reps: "8–12",
     video: "https://www.youtube.com/embed/ThJGIFDqiiA",
+    description:
+      "Incline dumbbell press targets the upper chest while also engaging shoulders and triceps.",
+    musclesWorked: ["Upper Chest", "Front Deltoids", "Triceps"],
+    steps: [
+      "Set bench to 30–45 degrees.",
+      "Hold dumbbells at shoulder level.",
+      "Press dumbbells upward until arms extend.",
+      "Lower slowly with control.",
+    ],
+    tips: [
+      "Use controlled reps",
+      "Avoid locking elbows",
+      "Focus on upper chest contraction",
+    ],
   },
-  {
-    name: "Flat Barbell Bench Press",
-    slug: "flat-barbell-bench-press",
-    muscle: "Chest",
-    sets: "4",
-    reps: "6–10",
-    video: "",
-  },
+
   {
     name: "Lat Pulldown",
     slug: "lat-pulldown",
@@ -22,15 +29,22 @@ export const exercises = [
     sets: "4",
     reps: "10–12",
     video: "",
+    description:
+      "Lat pulldown is a fundamental back exercise that builds width and strength.",
+    musclesWorked: ["Lats", "Upper Back", "Biceps"],
+    steps: [
+      "Grip the bar wider than shoulders.",
+      "Pull bar down to upper chest.",
+      "Squeeze lats at bottom.",
+      "Slowly return to start.",
+    ],
+    tips: [
+      "Avoid swinging",
+      "Pull elbows down, not hands",
+      "Control the negative",
+    ],
   },
-  {
-    name: "Seated Cable Row",
-    slug: "seated-cable-row",
-    muscle: "Back",
-    sets: "3",
-    reps: "10–12",
-    video: "",
-  },
+
   {
     name: "Barbell Squat",
     slug: "barbell-squat",
@@ -38,61 +52,21 @@ export const exercises = [
     sets: "4",
     reps: "6–10",
     video: "",
+    description:
+      "Barbell squat is a compound movement that builds leg strength and size.",
+    musclesWorked: ["Quadriceps", "Glutes", "Hamstrings", "Core"],
+    steps: [
+      "Place bar on upper back.",
+      "Stand shoulder-width apart.",
+      "Lower hips until thighs are parallel.",
+      "Drive through heels to stand.",
+    ],
+    tips: [
+      "Keep chest up",
+      "Brace core before descending",
+      "Do not rush reps",
+    ],
   },
-  {
-    name: "Leg Press",
-    slug: "leg-press",
-    muscle: "Legs",
-    sets: "4",
-    reps: "10–12",
-    video: "",
-  },
-  {
-    name: "Barbell Shoulder Press",
-    slug: "barbell-shoulder-press",
-    muscle: "Shoulders",
-    sets: "4",
-    reps: "8–10",
-    video: "",
-  },
-  {
-    name: "Lateral Raises",
-    slug: "lateral-raises",
-    muscle: "Shoulders",
-    sets: "4",
-    reps: "12–15",
-    video: "",
-  },
-  {
-    name: "Barbell Curl",
-    slug: "barbell-curl",
-    muscle: "Biceps",
-    sets: "3",
-    reps: "10–12",
-    video: "",
-  },
-  {
-    name: "Hammer Curl",
-    slug: "hammer-curl",
-    muscle: "Biceps",
-    sets: "3",
-    reps: "10–12",
-    video: "",
-  },
-  {
-    name: "Tricep Rope Pushdown",
-    slug: "tricep-rope-pushdown",
-    muscle: "Triceps",
-    sets: "3",
-    reps: "12–15",
-    video: "",
-  },
-  {
-    name: "Overhead Tricep Extension",
-    slug: "overhead-tricep-extension",
-    muscle: "Triceps",
-    sets: "3",
-    reps: "10–12",
-    video: "",
-  },
+
+  // Remaining exercises can stay basic for now
 ];
