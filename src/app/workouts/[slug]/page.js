@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function WorkoutDetailPage() {
@@ -9,29 +10,29 @@ export default function WorkoutDetailPage() {
     "push-pull-legs": {
       title: "Push Pull Legs",
       description:
-        "Push Pull Legs is a structured split that allows optimal recovery and balanced muscle growth.",
+        "A structured split designed for balanced growth and recovery.",
       days: [
         {
           day: "Push Day",
           exercises: [
-            "Incline Dumbbell Press",
-            "Barbell Shoulder Press",
-            "Tricep Rope Pushdown",
+            { name: "Incline Dumbbell Press", slug: "incline-dumbbell-press" },
+            { name: "Barbell Shoulder Press", slug: "barbell-shoulder-press" },
+            { name: "Tricep Rope Pushdown", slug: "tricep-rope-pushdown" },
           ],
         },
         {
           day: "Pull Day",
           exercises: [
-            "Lat Pulldown",
-            "Seated Cable Row",
-            "Barbell Curl",
+            { name: "Lat Pulldown", slug: "lat-pulldown" },
+            { name: "Seated Cable Row", slug: "seated-cable-row" },
+            { name: "Barbell Curl", slug: "barbell-curl" },
           ],
         },
         {
           day: "Leg Day",
           exercises: [
-            "Barbell Squat",
-            "Leg Press",
+            { name: "Barbell Squat", slug: "barbell-squat" },
+            { name: "Leg Press", slug: "leg-press" },
           ],
         },
       ],
@@ -51,26 +52,27 @@ export default function WorkoutDetailPage() {
   return (
     <main className="min-h-screen bg-black text-white px-6 py-16">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">
-          {workout.title}
-        </h1>
+        <h1 className="text-4xl font-bold mb-4">{workout.title}</h1>
+        <p className="text-gray-400 mb-10">{workout.description}</p>
 
-        <p className="text-gray-400 mb-10">
-          {workout.description}
-        </p>
-
-        {workout.days.map((day, index) => (
+        {workout.days.map((day, i) => (
           <div
-            key={index}
+            key={i}
             className="border border-gray-800 rounded-2xl p-6 mb-6"
           >
-            <h2 className="text-2xl font-semibold mb-4">
-              {day.day}
-            </h2>
+            <h2 className="text-2xl font-semibold mb-4">{day.day}</h2>
 
-            <ul className="text-gray-400 space-y-2">
-              {day.exercises.map((ex, i) => (
-                <li key={i}>• {ex}</li>
+            <ul className="space-y-2 text-gray-400">
+              {day.exercises.map((ex, j) => (
+                <li key={j}>
+                  •{" "}
+                  <Link
+                    href={`/exercises/${ex.slug}`}
+                    className="text-white hover:underline"
+                  >
+                    {ex.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
