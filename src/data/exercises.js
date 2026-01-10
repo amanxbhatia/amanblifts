@@ -68,5 +68,94 @@ export const exercises = [
     ],
   },
 
+  {
+  name: "Barbell Shoulder Press",
+  slug: "barbell-shoulder-press",
+  muscle: "Shoulders",
+  sets: "4",
+  reps: "8–10",
+  video: "",
+  description:
+    "Barbell shoulder press is a compound movement that builds overall shoulder strength and size.",
+  musclesWorked: ["Front Deltoids", "Side Deltoids", "Triceps"],
+  steps: [
+    "Grip the bar slightly wider than shoulder-width.",
+    "Press the bar overhead until arms are fully extended.",
+    "Lower the bar slowly to shoulder level.",
+  ],
+  tips: [
+    "Avoid excessive lower back arch",
+    "Do not lock elbows aggressively",
+    "Control the bar path",
+  ],
+},
+
+{
+  name: "Lateral Raises",
+  slug: "lateral-raises",
+  muscle: "Shoulders",
+  sets: "4",
+  reps: "12–15",
+  video: "",
+  description:
+    "Lateral raises isolate the side delts and help build shoulder width.",
+  musclesWorked: ["Side Deltoids"],
+  steps: [
+    "Hold dumbbells at your sides.",
+    "Raise arms until parallel to the floor.",
+    "Lower slowly with control.",
+  ],
+  tips: [
+    "Use light to moderate weight",
+    "Avoid swinging the dumbbells",
+    "Keep slight bend in elbows",
+  ],
+},
+
+{
+  name: "Barbell Curl",
+  slug: "barbell-curl",
+  muscle: "Biceps",
+  sets: "3",
+  reps: "10–12",
+  video: "",
+  description:
+    "Barbell curl is a fundamental biceps exercise for building arm size and strength.",
+  musclesWorked: ["Biceps"],
+  steps: [
+    "Grip the bar shoulder-width apart.",
+    "Curl the bar up while keeping elbows close.",
+    "Lower the bar slowly to starting position.",
+  ],
+  tips: [
+    "Avoid swinging the body",
+    "Squeeze biceps at the top",
+    "Control the negative",
+  ],
+},
+
+{
+  name: "Tricep Rope Pushdown",
+  slug: "tricep-rope-pushdown",
+  muscle: "Triceps",
+  sets: "3",
+  reps: "12–15",
+  video: "",
+  description:
+    "Tricep rope pushdown isolates the triceps and improves arm definition.",
+  musclesWorked: ["Triceps"],
+  steps: [
+    "Grip rope with palms facing each other.",
+    "Push rope down until arms are extended.",
+    "Slowly return to starting position.",
+  ],
+  tips: [
+    "Keep elbows tucked",
+    "Do not use body momentum",
+    "Focus on full extension",
+  ],
+},
+
+
   // Remaining exercises can stay basic for now
 ];
