@@ -19,6 +19,9 @@ export default function Navbar() {
           <Link href="/exercises" className="hover:text-white transition">
             Exercises
           </Link>
+          <Link href="/workouts" className="text-gray-300 hover:text-white transition">
+            Workouts
+          </Link>
           <Link href="/ai-coach" className="hover:text-white transition">
             AI Coach
           </Link>
