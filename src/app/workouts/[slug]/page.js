@@ -37,6 +37,45 @@ export default function WorkoutDetailPage() {
         },
       ],
     },
+    "chest-triceps": {
+      title: "Chest & Triceps",
+      description:
+        "A push-focused workout designed to build chest size and tricep strength.",
+      days: [
+        {
+          day: "Workout",
+          exercises: [
+            { name: "Incline Dumbbell Press", slug: "incline-dumbbell-press" },
+            {
+              name: "Flat Barbell Bench Press",
+              slug: "flat-barbell-bench-press",
+            },
+            { name: "Tricep Rope Pushdown", slug: "tricep-rope-pushdown" },
+            {
+              name: "Overhead Tricep Extension",
+              slug: "overhead-tricep-extension",
+            },
+          ],
+        },
+      ],
+    },
+
+    "back-biceps": {
+      title: "Back & Biceps",
+      description:
+        "Pull-focused workout for building back thickness and bicep size.",
+      days: [
+        {
+          day: "Workout",
+          exercises: [
+            { name: "Lat Pulldown", slug: "lat-pulldown" },
+            { name: "Seated Cable Row", slug: "seated-cable-row" },
+            { name: "Barbell Curl", slug: "barbell-curl" },
+            { name: "Hammer Curl", slug: "hammer-curl" },
+          ],
+        },
+      ],
+    },
   };
 
   const workout = workouts[slug];
@@ -56,10 +95,7 @@ export default function WorkoutDetailPage() {
         <p className="text-gray-400 mb-10">{workout.description}</p>
 
         {workout.days.map((day, i) => (
-          <div
-            key={i}
-            className="border border-gray-800 rounded-2xl p-6 mb-6"
-          >
+          <div key={i} className="border border-gray-800 rounded-2xl p-6 mb-6">
             <h2 className="text-2xl font-semibold mb-4">{day.day}</h2>
 
             <ul className="space-y-2 text-gray-400">
