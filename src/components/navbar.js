@@ -3,9 +3,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-gray-800">
-     <div className="max-w-6xl mx-auto px-6 py-4 sm:py-5 flex justify-between items-center">
-
-        
+      <div className="max-w-6xl mx-auto px-6 py-4 sm:py-5 flex justify-between items-center">
         {/* Logo */}
         <Link
           href="/"
@@ -15,24 +13,30 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links */}
-        <div className="flex gap-8 text-sm font-medium text-gray-300">
-          <Link href="/exercises" className="hover:text-white transition">
+        {/* RIGHT: PRIMARY LINKS */}
+        <div className="flex gap-4 text-sm sm:text-base">
+          <a href="/exercises" className="hover:text-white">
             Exercises
-          </Link>
-          <Link href="/workouts" className="text-gray-300 hover:text-white transition">
+          </a>
+          <a href="/workouts" className="hover:text-white">
             Workouts
-          </Link>
-          <Link href="/ai-coach" className="hover:text-white transition">
+          </a>
+          <a href="/ai-coach" className="hover:text-white">
             AI Coach
-          </Link>
-          <Link href="/blog" className="hover:text-white transition">
-            Blog
-          </Link>
-          <Link href="/shop" className="hover:text-white transition">
-            Shop
-           </Link>
+          </a>
         </div>
+      </div>
 
+      {/* SECOND ROW */}
+      <div className="flex justify-end px-4 pb-3">
+        <div className="flex gap-4 text-sm sm:text-base font-medium text-gray-300">
+          <a href="/blog" className="hover:text-white transition">
+            Blog
+          </a>
+          <a href="/shop" className="hover:text-white transition">
+            Shop
+          </a>
+        </div>
       </div>
     </nav>
   );

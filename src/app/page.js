@@ -26,14 +26,24 @@ export default function Home() {
       built from real gym experience.
     </p>
 
-    <div className="flex justify-center">
-      <a
-        href="/exercises"
-        className="bg-white text-black px-8 sm:px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
-      >
-        Explore Exercises
-      </a>
-    </div>
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
+  
+  <a
+    href="/exercises"
+    className="bg-white text-black px-8 sm:px-10 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+  >
+    Explore Exercises
+  </a>
+
+  <a
+    href="/workouts"
+    className="border border-gray-600 px-8 sm:px-10 py-4 rounded-xl font-semibold text-white hover:border-gray-400 transition"
+  >
+    View Workout Routines
+  </a>
+
+</div>
+
   </div>
 </section>
 
