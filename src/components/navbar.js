@@ -1,43 +1,49 @@
 import Link from "next/link";
 
 export default function Navbar() {
+  const navClass =
+    "px-4 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white transition font-medium";
+
   return (
-    <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-6 py-4 sm:py-5 flex justify-between items-center">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-xl font-bold tracking-wide hover:text-gray-300 transition"
-        >
+    <nav className="w-full border-b border-gray-800">
+
+      {/* TOP ROW */}
+      <div className="flex items-center justify-between px-4 py-3 gap-3 flex-wrap">
+
+        {/* HOME */}
+        <Link href="/" className={navClass}>
           Home
         </Link>
 
-        {/* Navigation Links */}
-        {/* RIGHT: PRIMARY LINKS */}
-        <div className="flex gap-4 text-sm sm:text-base">
-          <a href="/exercises" className="hover:text-white">
+        {/* PRIMARY LINKS */}
+        <div className="flex gap-3 flex-wrap justify-end">
+          <Link href="/exercises" className={navClass}>
             Exercises
-          </a>
-          <a href="/workouts" className="hover:text-white">
+          </Link>
+
+          <Link href="/workouts" className={navClass}>
             Workouts
-          </a>
-          <a href="/ai-coach" className="hover:text-white">
+          </Link>
+
+          <Link href="/ai-coach" className={navClass}>
             AI Coach
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* SECOND ROW */}
       <div className="flex justify-end px-4 pb-3">
-        <div className="flex gap-4 text-sm sm:text-base font-medium text-gray-300">
-          <a href="/blog" className="hover:text-white transition">
+        <div className="flex gap-3 flex-wrap">
+          <Link href="/blog" className={navClass}>
             Blog
-          </a>
-          <a href="/shop" className="hover:text-white transition">
+          </Link>
+
+          <Link href="/shop" className={navClass}>
             Shop
-          </a>
+          </Link>
         </div>
       </div>
+
     </nav>
   );
 }
