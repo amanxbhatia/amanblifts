@@ -1,10 +1,26 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import { exercises } from "../../../data/exercises";
 
-export default function ExerciseDetailPage() {
-  const slug = usePathname().split("/").pop();
+/* ---------- DYNAMIC SEO ---------- */
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const exercise = exercises.find((ex) => ex.slug === slug);
+
+  if (!exercise) {
+    return {
+      title: "Exercise | amanblifts",
+      description: "Exercise details coming soon on amanblifts.",
+    };
+  }
+
+  return {
+    title: `${exercise.name} | amanblifts`,
+    description: `Learn how to perform ${exercise.name} with proper form, muscles worked, sets, reps, and training tips.`,
+  };
+}
+
+/* ---------- PAGE ---------- */
+export default async function ExerciseDetailPage({ params }) {
+  const { slug } = await params;
   const exercise = exercises.find((ex) => ex.slug === slug);
 
   if (!exercise || !exercise.description) {
@@ -21,8 +37,11 @@ export default function ExerciseDetailPage() {
   return (
     <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-16">
       <div className="max-w-4xl mx-auto">
+
         {/* TITLE */}
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">{exercise.name}</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+          {exercise.name}
+        </h1>
 
         <p className="text-gray-400 text-sm sm:text-base mb-8">
           {exercise.description}
@@ -54,7 +73,9 @@ export default function ExerciseDetailPage() {
 
         {/* MUSCLES WORKED */}
         <section className="border border-gray-800 rounded-2xl p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-4">Muscles Worked</h2>
+          <h2 className="text-xl font-semibold mb-4">
+            Muscles Worked
+          </h2>
           <ul className="text-gray-400 space-y-2">
             {exercise.musclesWorked.map((m, i) => (
               <li key={i}>• {m}</li>
@@ -64,7 +85,9 @@ export default function ExerciseDetailPage() {
 
         {/* HOW TO PERFORM */}
         <section className="border border-gray-800 rounded-2xl p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-4">How to Perform</h2>
+          <h2 className="text-xl font-semibold mb-4">
+            How to Perform
+          </h2>
           <ol className="list-decimal list-inside text-gray-400 space-y-2">
             {exercise.steps.map((s, i) => (
               <li key={i}>{s}</li>
@@ -74,13 +97,16 @@ export default function ExerciseDetailPage() {
 
         {/* TRAINING TIPS */}
         <section className="border border-gray-800 rounded-2xl p-6">
-          <h2 className="text-xl font-semibold mb-4">Training Tips</h2>
+          <h2 className="text-xl font-semibold mb-4">
+            Training Tips
+          </h2>
           <ul className="text-gray-400 space-y-2">
             {exercise.tips.map((t, i) => (
               <li key={i}>• {t}</li>
             ))}
           </ul>
         </section>
+
       </div>
     </main>
   );
