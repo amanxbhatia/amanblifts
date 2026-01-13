@@ -8,44 +8,38 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-black border-b border-gray-800">
       <nav className="max-w-7xl mx-auto px-4 py-3">
 
-        {/* GRID LAYOUT */}
-        <div className="grid grid-cols-4 gap-y-2 items-center">
+        {/* ROW 1 */}
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          
+          {/* LEFT */}
+          <Link href="/" className={navItem}>
+            Home
+          </Link>
 
-          {/* ROW 1 */}
-          <div className="col-span-1">
-            <Link href="/" className={navItem}>
-              Home
-            </Link>
-          </div>
-
-          <div className="col-span-3 flex gap-3 justify-end flex-wrap">
+          {/* RIGHT */}
+          <div className="flex gap-3 flex-wrap justify-end">
             <Link href="/exercises" className={navItem}>
               Exercises
             </Link>
-
             <Link href="/workouts" className={navItem}>
               Workouts
             </Link>
-
             <Link href="/ai-coach" className={navItem}>
               AI Coach
             </Link>
           </div>
-
-          {/* ROW 2 (under Exercises) */}
-          <div className="col-span-1"></div>
-
-          <div className="col-span-3 flex gap-3 justify-start pl-[6.5rem] sm:pl-[7.5rem]">
-            <Link href="/blog" className={navItem}>
-              Blog
-            </Link>
-
-            <Link href="/shop" className={navItem}>
-              Shop
-            </Link>
-          </div>
-
         </div>
+
+        {/* ROW 2 */}
+        <div className="mt-2 flex justify-end gap-3">
+          <Link href="/blog" className={navItem}>
+            Blog
+          </Link>
+          <Link href="/shop" className={navItem}>
+            Shop
+          </Link>
+        </div>
+
       </nav>
     </header>
   );

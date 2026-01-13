@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { exercises } from "../../data/exercises";
 
-
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("All");
 
@@ -52,9 +51,7 @@ export default function ExercisesPage() {
           <Link key={ex.slug} href={`/exercises/${ex.slug}`}>
             <div className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition cursor-pointer">
               <div className="mb-6">
-                <h2 className="text-2xl font-semibold mb-2">
-                  {ex.name}
-                </h2>
+                <h2 className="text-2xl font-semibold mb-2">{ex.name}</h2>
 
                 <p className="text-gray-400 text-sm">
                   Muscle: <span className="text-white">{ex.muscle}</span>
@@ -65,13 +62,15 @@ export default function ExercisesPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-gray-800">
-                <iframe
-                  src={ex.video}
-                  className="w-full aspect-video"
-                  allowFullScreen
-                />
-              </div>
+              {ex.video && (
+                <div className="rounded-xl overflow-hidden border border-gray-800">
+                  <iframe
+                    src={ex.video}
+                    className="w-full aspect-video"
+                    allowFullScreen
+                  />
+                </div>
+              )}
             </div>
           </Link>
         ))}
