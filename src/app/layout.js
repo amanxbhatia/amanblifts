@@ -4,25 +4,38 @@ import Footer from "@/components/footer";
 
 
 export const metadata = {
-  title: "amanblifts",
-  description: "Daily gym edits, workout knowledge & AI gym coach",
-   openGraph: {
-    title: "amanblifts",
-    description: "Train smart. Lift real. Free workouts & AI gym coach.",
+  title: {
+    default: "amanblifts – Train Smart. Lift Real.",
+    template: "%s | amanblifts",
+  },
+  description:
+    "amanblifts is a practical gym platform with exercise guides, workout routines, and real training knowledge built from daily gym experience.",
+  keywords: [
+    "gym exercises",
+    "workout routines",
+    "fitness training",
+    "gym guide",
+    "amanblifts",
+  ],
+  metadataBase: new URL("https://amanblifts.vercel.app"),
+  openGraph: {
+    title: "amanblifts – Train Smart. Lift Real.",
+    description:
+      "Explore real gym exercises, structured workout routines, and training knowledge from amanblifts.",
     url: "https://amanblifts.vercel.app",
     siteName: "amanblifts",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "amanblifts - Fitness & AI Gym Coach",
+        alt: "amanblifts fitness platform",
       },
     ],
-    locale: "en_IN",
     type: "website",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (

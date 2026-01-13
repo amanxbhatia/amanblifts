@@ -4,8 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { exercises } from "../../data/exercises";
 
+export const metadata = {
+  title: "Exercises",
+  description:
+    "Browse gym exercises with proper form, muscles worked, sets, reps, and real training videos.",
+};
+
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("All");
+
 
   const muscles = [
     "All",

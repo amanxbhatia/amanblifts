@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Workout Routines",
+  description:
+    "Explore structured workout routines like Push Pull Legs, Chest & Triceps, and Back & Biceps.",
+};
+
 export default function WorkoutsPage() {
   const workouts = [
     {
