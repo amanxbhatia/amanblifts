@@ -1,7 +1,9 @@
+export const dynamic = "force-static";
+
 export default function sitemap() {
   return [
     {
-      url: "https://amanblifts.vercel.app",
+      url: "https://amanblifts.vercel.app/",
       lastModified: new Date(),
     },
     {
