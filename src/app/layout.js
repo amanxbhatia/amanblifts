@@ -10,20 +10,14 @@ export const metadata = {
   },
   description:
     "amanblifts is a practical gym platform with exercise guides, workout routines, and real training knowledge built from daily gym experience.",
-  keywords: [
-    "gym exercises",
-    "workout routines",
-    "fitness training",
-    "gym guide",
-    "amanblifts",
-  ],
   metadataBase: new URL("https://amanblifts.vercel.app"),
+  verification: {
+    google: "aBBZd3eEQfRV10u-6knI9VLvswAt3OESN8B7lG1giU4",
+  },
   openGraph: {
     title: "amanblifts – Train Smart. Lift Real.",
     description:
       "Explore real gym exercises, structured workout routines, and training knowledge from amanblifts.",
-    url: "https://amanblifts.vercel.app",
-    siteName: "amanblifts",
     images: [
       {
         url: "/og-image.jpg",
@@ -32,7 +26,6 @@ export const metadata = {
         alt: "amanblifts fitness platform",
       },
     ],
-    type: "website",
   },
 };
 
