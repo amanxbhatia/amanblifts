@@ -1,26 +1,5 @@
-// export const dynamic = "force-static";
-
-// export default function sitemap() {
-//   return [
-//     {
-//       url: "https://amanblifts.vercel.app/",
-//       lastModified: new Date(),
-//     },
-//     {
-//       url: "https://amanblifts.vercel.app/exercises",
-//       lastModified: new Date(),
-//     },
-//     {
-//       url: "https://amanblifts.vercel.app/workouts",
-//       lastModified: new Date(),
-//     },
-//     {
-//       url: "https://amanblifts.vercel.app/blog",
-//       lastModified: new Date(),
-//     },
-//   ];
-// }
 import { exercises } from "../data/exercises";
+import { workouts } from "../data/workouts";
 
 export const dynamic = "force-static";
 
@@ -51,5 +30,10 @@ export default function sitemap() {
     lastModified: new Date(),
   }));
 
-  return [...staticPages, ...exercisePages];
+  const workoutPages = workouts.map((workout) => ({
+    url: `${baseUrl}/workouts/${workout.slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticPages, ...exercisePages, ...workoutPages];
 }
