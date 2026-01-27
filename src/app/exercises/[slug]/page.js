@@ -45,7 +45,7 @@ export default async function ExerciseDetailPage({ params }) {
         </p>
 
         {/* VIDEO */}
-        {/* VIDEO (LONG FORM) */}
+        {/* VIDEO (LONG FORM)
         {exercise.video && (
           <div className="rounded-2xl overflow-hidden border border-gray-800 mb-8">
             <iframe
@@ -54,7 +54,7 @@ export default async function ExerciseDetailPage({ params }) {
               allowFullScreen
             />
           </div>
-        )}
+        )} */}
 
         {/* YOUTUBE SHORT CTA */}
         {exercise.shortsLink && (
