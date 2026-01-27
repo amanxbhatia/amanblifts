@@ -37,24 +37,40 @@ export default async function ExerciseDetailPage({ params }) {
   return (
     <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-16">
       <div className="max-w-4xl mx-auto">
-
         {/* TITLE */}
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-          {exercise.name}
-        </h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4">{exercise.name}</h1>
 
         <p className="text-gray-400 text-sm sm:text-base mb-8">
           {exercise.description}
         </p>
 
         {/* VIDEO */}
+        {/* VIDEO (LONG FORM) */}
         {exercise.video && (
-          <div className="rounded-2xl overflow-hidden border border-gray-800 mb-10">
+          <div className="rounded-2xl overflow-hidden border border-gray-800 mb-8">
             <iframe
               src={exercise.video}
               className="w-full aspect-video"
               allowFullScreen
             />
+          </div>
+        )}
+
+        {/* YOUTUBE SHORT CTA */}
+        {exercise.shortsLink && (
+          <div className="border border-gray-800 rounded-2xl p-6 text-center mb-8">
+            <p className="text-gray-400 mb-4">
+              Watch real form demonstration on YouTube
+            </p>
+
+            <a
+              href={exercise.shortsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+            >
+              ▶ Watch on YouTube
+            </a>
           </div>
         )}
 
@@ -73,9 +89,7 @@ export default async function ExerciseDetailPage({ params }) {
 
         {/* MUSCLES WORKED */}
         <section className="border border-gray-800 rounded-2xl p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-4">
-            Muscles Worked
-          </h2>
+          <h2 className="text-xl font-semibold mb-4">Muscles Worked</h2>
           <ul className="text-gray-400 space-y-2">
             {exercise.musclesWorked.map((m, i) => (
               <li key={i}>• {m}</li>
@@ -85,9 +99,7 @@ export default async function ExerciseDetailPage({ params }) {
 
         {/* HOW TO PERFORM */}
         <section className="border border-gray-800 rounded-2xl p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-4">
-            How to Perform
-          </h2>
+          <h2 className="text-xl font-semibold mb-4">How to Perform</h2>
           <ol className="list-decimal list-inside text-gray-400 space-y-2">
             {exercise.steps.map((s, i) => (
               <li key={i}>{s}</li>
@@ -97,16 +109,13 @@ export default async function ExerciseDetailPage({ params }) {
 
         {/* TRAINING TIPS */}
         <section className="border border-gray-800 rounded-2xl p-6">
-          <h2 className="text-xl font-semibold mb-4">
-            Training Tips
-          </h2>
+          <h2 className="text-xl font-semibold mb-4">Training Tips</h2>
           <ul className="text-gray-400 space-y-2">
             {exercise.tips.map((t, i) => (
               <li key={i}>• {t}</li>
             ))}
           </ul>
         </section>
-
       </div>
     </main>
   );

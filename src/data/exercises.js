@@ -15,11 +15,7 @@ export const exercises = [
       "Press upward until arms are extended",
       "Lower slowly with control",
     ],
-    tips: [
-      "Do not lock elbows",
-      "Control the negative",
-      "Keep feet planted",
-    ],
+    tips: ["Do not lock elbows", "Control the negative", "Keep feet planted"],
   },
 
   {
@@ -28,7 +24,8 @@ export const exercises = [
     muscle: "Back",
     description:
       "Lat pulldowns build width in your back and strengthen the lats.",
-    video: "https://www.youtube.com/embed/k33L59bURSs",
+    video: "",
+    shortsLink: "https://youtube.com/shorts/k33L59bURSs",
     sets: "4",
     reps: "10–12",
     musclesWorked: ["Lats", "Upper Back", "Biceps"],
@@ -38,10 +35,7 @@ export const exercises = [
       "Squeeze shoulder blades",
       "Return slowly",
     ],
-    tips: [
-      "Avoid using momentum",
-      "Pull with elbows, not hands",
-    ],
+    tips: ["Avoid using momentum", "Pull with elbows, not hands"],
   },
 
   {
@@ -60,18 +54,14 @@ export const exercises = [
       "Lower until thighs are parallel",
       "Drive up through heels",
     ],
-    tips: [
-      "Keep chest upright",
-      "Do not collapse knees inward",
-    ],
+    tips: ["Keep chest upright", "Do not collapse knees inward"],
   },
 
   {
     slug: "barbell-shoulder-press",
     name: "Barbell Shoulder Press",
     muscle: "Shoulders",
-    description:
-      "A compound movement to build overall shoulder strength.",
+    description: "A compound movement to build overall shoulder strength.",
     video: "",
     sets: "4",
     reps: "6–10",
@@ -81,18 +71,14 @@ export const exercises = [
       "Press bar overhead",
       "Lower under control",
     ],
-    tips: [
-      "Brace your core",
-      "Avoid excessive lower back arch",
-    ],
+    tips: ["Brace your core", "Avoid excessive lower back arch"],
   },
 
   {
     slug: "lateral-raises",
     name: "Dumbbell Lateral Raises",
     muscle: "Shoulders",
-    description:
-      "Lateral raises isolate the side delts for shoulder width.",
+    description: "Lateral raises isolate the side delts for shoulder width.",
     video: "",
     sets: "3",
     reps: "12–15",
@@ -102,18 +88,14 @@ export const exercises = [
       "Raise arms to shoulder height",
       "Lower slowly",
     ],
-    tips: [
-      "Use light weights",
-      "Do not swing the dumbbells",
-    ],
+    tips: ["Use light weights", "Do not swing the dumbbells"],
   },
 
   {
     slug: "barbell-curl",
     name: "Barbell Curl",
     muscle: "Biceps",
-    description:
-      "A classic biceps exercise for size and strength.",
+    description: "A classic biceps exercise for size and strength.",
     video: "",
     sets: "3",
     reps: "8–12",
@@ -123,18 +105,14 @@ export const exercises = [
       "Curl bar toward chest",
       "Lower slowly",
     ],
-    tips: [
-      "Keep elbows tucked",
-      "Avoid swinging",
-    ],
+    tips: ["Keep elbows tucked", "Avoid swinging"],
   },
 
   {
     slug: "tricep-rope-pushdown",
     name: "Tricep Rope Pushdown",
     muscle: "Triceps",
-    description:
-      "An isolation exercise to build tricep definition.",
+    description: "An isolation exercise to build tricep definition.",
     video: "",
     sets: "3",
     reps: "12–15",
@@ -144,18 +122,14 @@ export const exercises = [
       "Push down until arms extend",
       "Slowly return",
     ],
-    tips: [
-      "Spread rope at the bottom",
-      "Keep elbows fixed",
-    ],
+    tips: ["Spread rope at the bottom", "Keep elbows fixed"],
   },
 
   {
     slug: "seated-cable-row",
     name: "Seated Cable Row",
     muscle: "Back",
-    description:
-      "Targets mid-back thickness and posture strength.",
+    description: "Targets mid-back thickness and posture strength.",
     video: "",
     sets: "4",
     reps: "10–12",
@@ -165,18 +139,14 @@ export const exercises = [
       "Pull toward waist",
       "Squeeze shoulder blades",
     ],
-    tips: [
-      "Avoid leaning back",
-      "Control the movement",
-    ],
+    tips: ["Avoid leaning back", "Control the movement"],
   },
 
   {
     slug: "leg-press",
     name: "Leg Press",
     muscle: "Legs",
-    description:
-      "A machine-based leg movement for quad and glute development.",
+    description: "A machine-based leg movement for quad and glute development.",
     video: "",
     sets: "4",
     reps: "10–15",
@@ -186,30 +156,19 @@ export const exercises = [
       "Lower sled under control",
       "Press back up",
     ],
-    tips: [
-      "Do not lock knees",
-      "Keep lower back supported",
-    ],
+    tips: ["Do not lock knees", "Keep lower back supported"],
   },
 
   {
     slug: "plank-hold",
     name: "Plank Hold",
     muscle: "Core",
-    description:
-      "An isometric core exercise for stability and endurance.",
+    description: "An isometric core exercise for stability and endurance.",
     video: "",
     sets: "3",
     reps: "30–60 sec",
     musclesWorked: ["Core", "Shoulders"],
-    steps: [
-      "Place forearms on floor",
-      "Keep body straight",
-      "Hold position",
-    ],
-    tips: [
-      "Do not sag hips",
-      "Breathe steadily",
-    ],
+    steps: ["Place forearms on floor", "Keep body straight", "Hold position"],
+    tips: ["Do not sag hips", "Breathe steadily"],
   },
 ];
