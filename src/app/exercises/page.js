@@ -50,10 +50,7 @@ export default function ExercisesPage() {
       <div className="max-w-5xl mx-auto grid gap-10">
         {filteredExercises.map((ex) => (
           <Link key={ex.slug} href={`/exercises/${ex.slug}`}>
-            <div
-              key={index}
-              className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition bg-black"
-            >
+            <div className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition bg-black">
               {/* HEADER */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
                 <h2 className="text-xl sm:text-2xl font-semibold">{ex.name}</h2>
