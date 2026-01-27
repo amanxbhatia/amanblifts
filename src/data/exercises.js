@@ -5,7 +5,8 @@ export const exercises = [
     muscle: "Chest",
     description:
       "The incline dumbbell press targets the upper chest and helps build balanced chest strength.",
-    video: "https://www.youtube.com/embed/ThJGIFDqiiA",
+    video:" ",
+    shortsLink: "https://youtube.com/shorts/ThJGIFDqiiA",
     sets: "4",
     reps: "8–12",
     musclesWorked: ["Upper Chest", "Front Delts", "Triceps"],
