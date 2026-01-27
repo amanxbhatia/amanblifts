@@ -7,7 +7,6 @@ import { exercises } from "../../data/exercises";
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("All");
 
-
   const muscles = [
     "All",
     "Chest",
@@ -30,16 +29,17 @@ export default function ExercisesPage() {
       </h1>
 
       {/* MUSCLE FILTER */}
-      <div className="flex flex-wrap gap-3 justify-center mb-14">
+      <div className="flex flex-wrap gap-3 justify-center mb-12 px-2">
         {muscles.map((muscle) => (
           <button
             key={muscle}
             onClick={() => setSelectedMuscle(muscle)}
-            className={`px-5 py-2 rounded-full border text-sm transition ${
-              selectedMuscle === muscle
-                ? "bg-white text-black border-white"
-                : "border-gray-700 text-gray-300 hover:border-gray-500"
-            }`}
+            className={`px-5 py-2 rounded-full border text-sm transition whitespace-nowrap
+        ${
+          selectedMuscle === muscle
+            ? "bg-white text-black border-white"
+            : "border-gray-700 text-gray-300 hover:border-gray-500"
+        }`}
           >
             {muscle}
           </button>
@@ -50,19 +50,30 @@ export default function ExercisesPage() {
       <div className="max-w-5xl mx-auto grid gap-10">
         {filteredExercises.map((ex) => (
           <Link key={ex.slug} href={`/exercises/${ex.slug}`}>
-            <div className="border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition cursor-pointer">
-              <div className="mb-6">
-                <h2 className="text-2xl font-semibold mb-2">{ex.name}</h2>
+            <div
+              key={index}
+              className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition bg-black"
+            >
+              {/* HEADER */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
+                <h2 className="text-xl sm:text-2xl font-semibold">{ex.name}</h2>
 
-                <p className="text-gray-400 text-sm">
-                  Muscle: <span className="text-white">{ex.muscle}</span>
-                </p>
-
-                <p className="text-gray-400 text-sm">
-                  Sets: {ex.sets} • Reps: {ex.reps}
-                </p>
+                <span className="text-xs uppercase tracking-wide text-gray-400 border border-gray-700 px-3 py-1 rounded-full w-fit">
+                  {ex.muscle}
+                </span>
               </div>
 
+              {/* META INFO */}
+              <div className="flex flex-wrap gap-3 mb-6 text-sm">
+                <span className="px-3 py-1 rounded-full bg-gray-900 border border-gray-800">
+                  Sets: {ex.sets}
+                </span>
+                <span className="px-3 py-1 rounded-full bg-gray-900 border border-gray-800">
+                  Reps: {ex.reps}
+                </span>
+              </div>
+
+              {/* VIDEO */}
               {ex.video && (
                 <div className="rounded-xl overflow-hidden border border-gray-800">
                   <iframe
