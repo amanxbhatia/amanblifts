@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { exercises } from "../../data/exercises";
+import Image from "next/image";
 
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("All");
@@ -21,6 +22,11 @@ export default function ExercisesPage() {
     selectedMuscle === "All"
       ? exercises
       : exercises.filter((ex) => ex.muscle === selectedMuscle);
+
+  console.log(
+    "EXERCISE THUMBNAILS",
+    filteredExercises.map((e) => e.thumbnail)
+  );
 
   return (
     <main className="min-h-screen bg-black text-white px-4 sm:px-6 py-14 sm:py-16">
@@ -51,6 +57,21 @@ export default function ExercisesPage() {
         {filteredExercises.map((ex) => (
           <Link key={ex.slug} href={`/exercises/${ex.slug}`}>
             <div className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition bg-black">
+              {/* THUMBNAIL */}
+              {ex.thumbnail && (
+                <div className="mb-5 rounded-xl overflow-hidden border border-gray-800">
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={ex.thumbnail}
+                      alt={`${ex.name} exercise demo`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* HEADER */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
                 <h2 className="text-xl sm:text-2xl font-semibold">{ex.name}</h2>
