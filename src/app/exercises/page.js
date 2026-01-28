@@ -71,7 +71,7 @@ export default function ExercisesPage() {
               </div>
 
               {/* VIDEO */}
-              {ex.video && (
+              {/* {ex.video && (
                 <div className="rounded-xl overflow-hidden border border-gray-800">
                   <iframe
                     src={ex.video}
@@ -79,7 +79,7 @@ export default function ExercisesPage() {
                     allowFullScreen
                   />
                 </div>
-              )}
+              )} */}
             </div>
           </Link>
         ))}
