@@ -62,12 +62,11 @@ export default function ExercisesPage() {
                 <div className="mb-5 rounded-xl overflow-hidden border border-gray-800">
                   <div className="relative w-full h-48">
                     <Image
-                      src={ex.thumbnail}
-                      alt={`${ex.name} exercise demo`}
+                      src="https://img.youtube.com/vi/k33L59bURSs/hqdefault.jpg"
+                      alt="debug thumbnail"
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
                       unoptimized
+                      className="object-cover"
                     />
                   </div>
                 </div>
