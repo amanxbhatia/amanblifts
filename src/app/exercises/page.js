@@ -61,7 +61,7 @@ export default function ExercisesPage() {
                 <div className="mb-5 rounded-xl overflow-hidden border border-gray-800 relative">
 
                   {/* Image */}
-                  <div className="relative w-full h-48">
+                  <div className="relative w-full h-48 z-0">
                     <Image
                       src={ex.thumbnail}
                       alt={`${ex.name} exercise demo`}
@@ -73,10 +73,10 @@ export default function ExercisesPage() {
                   </div>
 
                   {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30"></div>
+                  <div className="absolute inset-0 bg-black/30 z-10"></div>
 
                   {/* Play Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <div className="w-14 h-14 rounded-full bg-black/60 border border-white/30 flex items-center justify-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +91,7 @@ export default function ExercisesPage() {
 
                 </div>
               )}
+
 
               {/* HEADER */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
