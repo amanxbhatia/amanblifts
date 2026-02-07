@@ -41,11 +41,10 @@ export default function ExercisesPage() {
             key={muscle}
             onClick={() => setSelectedMuscle(muscle)}
             className={`px-5 py-2 rounded-full border text-sm transition whitespace-nowrap
-        ${
-          selectedMuscle === muscle
-            ? "bg-white text-black border-white"
-            : "border-gray-700 text-gray-300 hover:border-gray-500"
-        }`}
+        ${selectedMuscle === muscle
+                ? "bg-white text-black border-white"
+                : "border-gray-700 text-gray-300 hover:border-gray-500"
+              }`}
           >
             {muscle}
           </button>
@@ -59,7 +58,9 @@ export default function ExercisesPage() {
             <div className="border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-gray-600 transition bg-black">
               {/* THUMBNAIL */}
               {ex.thumbnail && (
-                <div className="mb-5 rounded-xl overflow-hidden border border-gray-800">
+                <div className="mb-5 rounded-xl overflow-hidden border border-gray-800 relative">
+
+                  {/* Image */}
                   <div className="relative w-full h-48">
                     <Image
                       src={ex.thumbnail}
@@ -70,6 +71,24 @@ export default function ExercisesPage() {
                       unoptimized
                     />
                   </div>
+
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-black/30"></div>
+
+                  {/* Play Icon */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-black/60 border border-white/30 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                        className="w-6 h-6 ml-1"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+
                 </div>
               )}
 
